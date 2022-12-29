@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+.s4 { color: #cc7832;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Ввод кол-ва инвестированных денег</span>
+<span class="s1">deposit_money = int(input(</span><span class="s2">&quot;Введите сумму вклада:&quot;</span><span class="s1">))</span>
+<span class="s0"># Создаю словарь с распределением процентных ставок по вкладам</span>
+<span class="s1">per_cent = {</span><span class="s2">'ТКБ'</span><span class="s1">: </span><span class="s3">5.6</span><span class="s4">, </span><span class="s2">'СКБ'</span><span class="s1">: </span><span class="s3">5.9</span><span class="s4">, </span><span class="s2">'ВТБ'</span><span class="s1">: </span><span class="s3">4.28</span><span class="s4">, </span><span class="s2">'СБЕР'</span><span class="s1">: </span><span class="s3">4.0</span><span class="s1">}</span>
+
+<span class="s1">procent = list(per_cent.values()) </span><span class="s0"># словарь перевожу в список</span>
+
+<span class="s0"># записываю доход в каждом банке в переменнуые и округляю</span>
+<span class="s1">bank_TKB = round(procent[</span><span class="s3">0</span><span class="s1">] * deposit_money)</span>
+<span class="s1">bank_CKB = round(procent[</span><span class="s3">1</span><span class="s1">] * deposit_money)</span>
+<span class="s1">bank_VTB = round(procent[</span><span class="s3">2</span><span class="s1">] * deposit_money)</span>
+<span class="s1">bank_SBER = round(procent[</span><span class="s3">3</span><span class="s1">] * deposit_money)</span>
+
+<span class="s1">deposit = [bank_TKB</span><span class="s4">, </span><span class="s1">bank_CKB</span><span class="s4">, </span><span class="s1">bank_VTB</span><span class="s4">, </span><span class="s1">bank_SBER] </span><span class="s0"># список с возможными доходами</span>
+
+<span class="s1">print(</span><span class="s2">&quot;Возможный доход:&quot;</span><span class="s4">, </span><span class="s1">deposit)</span>
+
+<span class="s1">sorted_deposit = sorted(deposit) </span><span class="s0"># Нахождение максимального значения с помощью функции sorted()</span>
+<span class="s1">result = sorted_deposit[-</span><span class="s3">1</span><span class="s1">]</span>
+
+<span class="s1">print(</span><span class="s2">&quot;Максимальная сумма, которую вы можете заработать - &quot;</span><span class="s4">, </span><span class="s1">(result)) </span><span class="s0"># вывожу максимальный доход</span>
+
+
+</pre>
+</body>
+</html>
